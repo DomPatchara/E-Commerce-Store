@@ -13,15 +13,15 @@ export const revalidate = 0;
 
 interface CategoryPageProps {
   params: Promise<{ categoryId: string }>;
-  searchParams: {
+  searchParams: Promise<{
     colorId: string;
     sizeId: string;
-  };
+  }>;
 }
 
 const CategoryPage = async ({ params, searchParams }: CategoryPageProps) => {
   const { categoryId } = await params;
-  const { colorId, sizeId } = searchParams;
+  const { colorId, sizeId } = await searchParams;
 
   const products = await getProducts({
     categoryId: categoryId,
