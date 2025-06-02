@@ -6,6 +6,7 @@ import ProductList from "@/components/product-list";
 import Gallery from "@/components/gallery";
 import Info from "@/components/info";
 
+
 interface ProductPageProps {
   params: Promise<{productId: string;}>;
 }

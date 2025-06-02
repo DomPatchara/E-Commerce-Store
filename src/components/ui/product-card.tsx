@@ -15,8 +15,6 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ data }: ProductCardProps) => {
-
-
   const router = useRouter();
   const handleClick = () => {
     router.push(`/product/${data.id}`);
@@ -36,7 +34,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
     e.stopPropagation();
 
     Cart.addItem(data);
-  }
+  };
 
   return (
     <div
@@ -46,7 +44,8 @@ const ProductCard = ({ data }: ProductCardProps) => {
       {/**Images and Actions */}
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image
-          priority
+          priority={false}
+          loading="lazy"
           src={data?.images?.[0]?.url}
           fill
           alt="Image"
