@@ -15,10 +15,12 @@ const SideGallery = ({image}: SideGalleryProp) => {
         <div>
             <span className='absolute h-full w-full aspect-square inset-0 overflow-hidden rounded-md'>
                 <Image
+                priority
                  fill
                  src={image.url}
                  alt="image"
                  className='object-cover object-center'
+                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
             </span>
             <span className={cn("absolute inset-0 ring-2 ring-offset-2", selected ? "ring-black": "ring-transparent")}/>

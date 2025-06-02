@@ -20,10 +20,12 @@ const Gallery = ({ images }: GalleryProps) => {
           <TabPanel key={image.id}>
             <div className="aspect-square relative w-full h-full sm:rounded-lg overflow-hidden">
               <Image
+                priority
                 fill
                 src={image.url}
                 alt="Image"
                 className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </TabPanel>
