@@ -44,8 +44,6 @@ const ProductCard = ({ data }: ProductCardProps) => {
       {/**Images and Actions */}
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image
-          priority={false}
-          loading="lazy"
           src={data?.images?.[0]?.url}
           fill
           alt="Image"
