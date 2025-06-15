@@ -5,7 +5,7 @@ const Loading = () => {
   return (
     <div className="flex justify-center items-center h-full py-10">
       <Loader2 className="animate-spin h-8 w-8 text-gray-500" />
-      <span className="ml-2 text-sm text-gray-500">Loading...</span>
+      <span className="ml-2 text-sm text-gray-500">Loading data...</span>
     </div>
   )
 }

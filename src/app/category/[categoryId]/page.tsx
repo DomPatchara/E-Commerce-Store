@@ -8,14 +8,15 @@ import Filter from "./components/filter";
 import NoResult from "@/components/ui/no-result";
 import ProductCard from "@/components/ui/product-card";
 import MobileFilter from "./components/mobile-filter";
+import getCategories from "../../../../actions/get-categories";
 
 export const revalidate = 0;
 
 interface CategoryPageProps {
   params: Promise<{ categoryId: string }>;
   searchParams: Promise<{
-    colorId: string;
-    sizeId: string;
+    colorId?: string;
+    sizeId?: string;
   }>;
 }
 
@@ -67,3 +68,13 @@ const CategoryPage = async ({ params, searchParams }: CategoryPageProps) => {
 };
 
 export default CategoryPage;
+
+
+
+export async function generateStaticParams() {
+  const categories = await getCategories();
+
+  return categories.map((cat) => ({
+    categoryId: cat.id.toString()
+  }))
+}

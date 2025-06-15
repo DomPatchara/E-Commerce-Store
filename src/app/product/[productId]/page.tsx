@@ -6,6 +6,12 @@ import ProductList from "@/components/product-list";
 import Gallery from "@/components/gallery";
 import Info from "@/components/info";
 
+export const generateStaticParams = async() => {
+  const products = await getProducts({});
+
+  return products.map((p) => ({ productId: p.id }))
+}
+
 
 interface ProductPageProps {
   params: Promise<{productId: string;}>;
